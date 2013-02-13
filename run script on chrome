@@ -1,0 +1,27 @@
+
+Running webdriver selenium script on chrome
+1.  Chrome driver :
+The ChromeDriver consists of three separate pieces. There is the browser itself ("chrome"), the language bindings provided by the Selenium project ("the driver") and an executable downloaded from the Chromium project which acts as a bridge between "chrome" and the "driver". This executable is called "chromedriver".
+
+Download chorme driver from :
+http://code.google.com/p/chromedriver/downloads/list
+
+2.	Create ChromeDriver instance:
+WebDriver driver = new ChromeDriver();
+
+3.	Set the chromedriver path to the variable "webdriver.chrome.driver"
+System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\my\ 
+\chromedriver.exe");
+
+4.  Also import:
+org.openqa.selenium.chrome.ChromeDriver
+
+5.	Implementation:
+In our project we have added the code in GUI_automation_base.java class
+Import org.openqa.selenium.chrome.ChromeDriver;                                               Protected static WebDriver   _driver;     
+            public void setUp() throws Exception
+           {
+           System.setProperty( "webdriver.chrome.driver"," C:\\path\\to\\my\ 
+           chromedriver.exe ");
+    	 _driver = new ChromeDriver();  	         
+            }
